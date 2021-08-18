@@ -10,9 +10,9 @@ class Base(models.Model):
         abstract = True
 
 
-class IPv4(Base):
-    ipv4_address = models.GenericIPAddressField(unique=True, protocol='IPv4', verbose_name='Endereço IPv4:',
-                                         help_text='Exemplo: <a>192.168.0.12</a>.')
+class IP(Base):
+    ips_address = models.GenericIPAddressField(unique=True, protocol='IPv4', verbose_name='Endereço IPv4:',
+                                               help_text='Exemplo: <a>192.168.0.12</a>.')
     department = models.CharField(max_length=80, verbose_name='Departamento:',
                                   help_text='Departamento: <a>Administração</a>')
 
@@ -21,9 +21,9 @@ class IPv4(Base):
         return reverse('ip:list_ipv4', kwargs={'pk': self.pk})
 
     def __str__(self):
-        return self.ipv4_address
+        return self.ips_address
 
     class Meta:
-        verbose_name = 'Endereço IPv4'
-        verbose_name_plural = 'Endereços IPv4'
+        verbose_name = 'Endereço IP'
+        verbose_name_plural = 'Endereços IPs'
         ordering = ['register_in']

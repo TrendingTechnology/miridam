@@ -1,9 +1,9 @@
 from django.forms import ModelForm
 
-from ip.models import IPv4
+from ip.models import IP
 
 
 class Ipv4Form(ModelForm):
     class Meta:
-        model = IPv4
-        fields = ['ipv4_address', 'department', 'activated']
+        model = IP
+        fields = ['ips_address', 'department', 'activated']

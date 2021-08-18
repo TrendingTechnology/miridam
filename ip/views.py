@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from ip.forms import Ipv4Form
-from ip.models import IPv4
+from ip.models import IP
 
 
 def list_ipv4(request):
     template_name = 'index.html'
-    list_all_ipv4 = IPv4.objects.filter(activated=True)
+    list_all_ipv4 = IP.objects.filter(activated=True)
     context = {'list_all_ipv4': list_all_ipv4}
     return render(request, template_name, context)
 
