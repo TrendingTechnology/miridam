@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'ip:register_ipv4' %}" class="btn btn-outline-primary m-2 m-1"><i class="far fa-plus-square m-1"></i>Cadastrar IP</a>
+<a class="btn btn-outline-danger m-1"><i class="fas fa-file-pdf m-1"></i>Gerar Relátorio</a>
+<table class="table table-bordered text-center">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">IPV4</th>
+        <th scope="col">Setor</th>
+        <th scope="col">Ação</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ipv4 in list_all_ipv4%}
+    <tr>
+        <th scope="row">{{ipv4.id}}</th>
+        <td>{{ipv4.ipv4_address}}</td>
+        <td>{{ipv4.department}}</td>
+        <td>
+            <a class="btn btn-primary"><i class="far fa-edit"></i></a>
+            <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            <a class="btn btn-success"><i class="fas fa-eye"></i></a>
+        </td>
+        {% empty %}
+        <th scope="row">Nenhuma informação encontrada!</th>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>
+
+{% endblock content %}
