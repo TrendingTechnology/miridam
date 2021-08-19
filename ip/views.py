@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from ip.forms import Ipv4Form
+from django.urls import reverse_lazy
+
+from ip.forms import IpForm
 from ip.models import IP
 from django.views import generic
 
@@ -18,11 +20,18 @@ class IpListView(generic.ListView):
         return context
 
 
+def disabled_IP_list(request):
+    template_name = 'index.html'
+    list_all_ip = IP.objects.filter(activated=False)
+    context = {'list_all_ip': list_all_ip}
+    return render(request, template_name, context)
+
+
 def register_ipv4(request):
     # Se request do usuário for igual a POST
     if request.method == "POST":
         # A variavel form vai receber os dados do request.POST
-        form = Ipv4Form(request.POST)
+        form = IpForm(request.POST)
         # Se os dados recebeido pelo form for valido
         if form.is_valid():
             # A Variavel ip vai receber e salvar o form mas não fará o commit para o banco de dados
@@ -33,5 +42,11 @@ def register_ipv4(request):
             return redirect('ip:list')
     else:
         # Caso o metodo não seja um POST válido ele vai retornar um form vazio
-        form = Ipv4Form()
+        form = IpForm()
     return render(request, 'register.html', {'form': form})
+
+
+class IpDeleteView(generic.DeleteView):
+    model = IP
+    template_name = 'delete.html'
+    success_url = reverse_lazy('ip:list')
