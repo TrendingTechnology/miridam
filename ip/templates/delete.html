@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <i class="fas fa-exclamation-triangle text-warning m-2 fa-2x"></i>
+        <div>
+            <p>Tem certeza que deseja deletar o IP: <span class="fw-bold">{{object.ips_address}}</span>?</p>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Deletar</button>
+    <a href="{% url 'ip:list' %}" class="btn btn-outline-danger">Cancelar</a>
+</form>
+{% endblock content %}
