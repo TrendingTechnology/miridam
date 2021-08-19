@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<a href="{% url 'ip:register' %}" class="btn btn-outline-primary m-2 m-1"><i class="far fa-plus-square m-1"></i>Cadastrar IP</a>
-<a class="btn btn-outline-danger m-1"><i class="fas fa-file-pdf m-1"></i>Gerar Relátorio</a>
+<div class="text-center">
+    <h1 class="display-5 fw-bold"><i class="fas fa-network-wired"></i>Cadastro de IP's</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Esse projeto permite salvar e validar IP's versão IPv4 e IPv6 que é a versão mais atual do
+            Protocolo de Internet.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="{% url 'ip:list' %}" class="btn btn-outline-success"><i class="fas fa-list"></i>IP'S
+                Ativos</a>
+            <a href="{% url 'ip:disable-list' %}" class="btn btn-outline-success"><i class="fas fa-list"></i>IP'S
+                Desativados</a>
+            <a href="{% url 'ip:register' %}" class="btn btn-outline-primary"><i class="far fa-plus-square"></i>Cadastrar
+                IP</a>
+            <a class="btn btn-outline-danger"><i class="fas fa-file-pdf"></i>Gerar Relátorio</a>
+        </div>
+    </div>
+</div>
 <table class="table table-bordered text-center">
     <thead>
     <tr>
@@ -18,9 +32,9 @@
         <td>{{ip.ips_address}}</td>
         <td>{{ip.department}}</td>
         <td>
-            <a class="btn btn-primary"><i class="far fa-edit"></i></a>
-            <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
             <a class="btn btn-success"><i class="fas fa-eye"></i></a>
+            <a class="btn btn-primary"><i class="far fa-edit"></i></a>
+            <a href="{% url 'ip:delete' ip.id %}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
         </td>
         {% empty %}
         <th scope="row">Nenhuma informação encontrada!</th>
