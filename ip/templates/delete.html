@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}
+<title>Confirmar Ação</title>
+{% endblock title %}
 {% block content %}
 <form method="post">
     {% csrf_token %}
@@ -8,7 +11,7 @@
             <p>Tem certeza que deseja deletar o IP: <span class="fw-bold">{{object.ips_address}}</span>?</p>
         </div>
     </div>
-    <button type="submit" class="btn btn-outline-primary">Deletar</button>
+    <button type="submit" class="btn btn-outline-primary">Confirmar</button>
     <a href="{% url 'ip:list' %}" class="btn btn-outline-danger">Cancelar</a>
 </form>
 {% endblock content %}
