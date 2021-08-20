@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
@@ -14,7 +15,7 @@ class IpListView(generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         # context recebe um dicionário
         context = super().get_context_data(**kwargs)
-        # context 'list_all_ip' recebe uma lista de IP's filtrados pelo statuc de activated
+        # context 'list_all_ip' recebe uma lista de IP's filtrados pelo status de activated
         context['list_all_ip'] = IP.objects.filter(activated=True)
         # Retorna o context
         return context
@@ -50,3 +51,9 @@ class IpDeleteView(generic.DeleteView):
     model = IP
     template_name = 'delete.html'
     success_url = reverse_lazy('ip:list')
+
+
+class IpDetailView(generic.DeleteView):
+    model = IP
+    template_name = 'detail.html'
+    context_object_name = 'ip'
