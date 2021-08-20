@@ -4,7 +4,7 @@ from django.db import models
 class Base(models.Model):
     register_in = models.DateTimeField(auto_now_add=True)
     updated_in = models.DateTimeField(auto_now=True)
-    activated = models.BooleanField(default=True)
+    activated = models.BooleanField(default=True, verbose_name='IP ativado?')
 
     class Meta:
         abstract = True
@@ -18,7 +18,7 @@ class IP(Base):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('ip:list_ipv4', kwargs={'pk': self.pk})
+        return reverse('ip:detail_ip', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.ips_address
