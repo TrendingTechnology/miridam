@@ -28,7 +28,7 @@ def disabled_IP_list(request):
     return render(request, template_name, context)
 
 
-def register_ipv4(request):
+def register_ip(request):
     # Se request do usuário for igual a POST
     if request.method == "POST":
         # A variavel form vai receber os dados do request.POST
