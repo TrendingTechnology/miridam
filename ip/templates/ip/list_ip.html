@@ -14,9 +14,11 @@
         <th scope="row">{{ip.id}}</th>
         <td>{{ip.ips_address}}</td>
         <td>
-            <a href="{{ ip.get_absolute_url }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-            <a href="{% url 'ip:edit' ip.pk %}" class="btn btn-primary"><i class="far fa-edit"></i></a>
-            <a href="{% url 'ip:delete' ip.id %}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="{{ ip.get_absolute_url }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                <a href="{% url 'ip:edit' ip.pk %}" class="btn btn-primary"><i class="far fa-edit"></i></a>
+                <a href="{% url 'ip:delete' ip.id %}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            </div>
         </td>
         {% empty %}
         <td scope="row">Nenhuma informação encontrada!</td>
