@@ -11,5 +11,7 @@ urlpatterns = [
     path('editar/<int:pk>', views.IpUpdateView.as_view(), name='edit'),
 
     # Department
-    path('department/', views.ListDepartment.as_view(), name='department'),
+    path('equipamentos/', views.ElectronicEquipmentListView.as_view(), name='equipments'),
+    path('equipamentos/cadastrar/', views.ElectronicEquipmentCreateView.as_view(), name='equipments_create'),
+    path('equipamentos/<int:pk>', views.ElectronicEquipmentEditView.as_view(), name='equipments_edit'),
 ]
