@@ -3,13 +3,13 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from ip.forms import IpForm
-from ip.models import IP
+from ip.models import IP, ElectronicEquipment
 from django.views import generic
 
 
 class IpListView(generic.ListView):
     model = IP
-    template_name = 'index.html'
+    template_name = 'ip/index.html'
 
     # Definindo um contexto
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -22,7 +22,7 @@ class IpListView(generic.ListView):
 
 
 def disabled_IP_list(request):
-    template_name = 'index.html'
+    template_name = 'ip/index.html'
     list_all_ip = IP.objects.filter(activated=False)
     context = {'list_all_ip': list_all_ip}
     return render(request, template_name, context)
@@ -44,22 +44,28 @@ def register_ip(request):
     else:
         # Caso o metodo não seja um POST válido ele vai retornar um form vazio
         form = IpForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'ip/register.html', {'form': form})
 
 
 class IpDeleteView(generic.DeleteView):
     model = IP
-    template_name = 'delete.html'
+    template_name = 'ip/delete.html'
     success_url = reverse_lazy('ip:list')
 
 
 class IpDetailView(generic.DeleteView):
     model = IP
-    template_name = 'detail.html'
+    template_name = 'ip/detail.html'
     context_object_name = 'ip'
 
 
 class IpUpdateView(generic.UpdateView):
     model = IP
-    template_name = 'update.html'
+    template_name = 'ip/update.html'
     fields = '__all__'
+
+
+class ListDepartment(generic.ListView):
+    template_name = 'department/department.html'
+    model = ElectronicEquipment
+    context_object_name = 'departments'
