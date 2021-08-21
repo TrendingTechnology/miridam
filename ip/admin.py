@@ -1,8 +1,6 @@
 from django.contrib import admin
-from ip.models import IP
+from ip.models import IP, ElectronicEquipment
 
+admin.site.register(ElectronicEquipment)
+admin.site.register(IP)
 
-@admin.register(IP)
-class IPv4Admin(admin.ModelAdmin):
-    list_display = ['id', 'ips_address']
-    list_display_links = ['id', 'ips_address']
