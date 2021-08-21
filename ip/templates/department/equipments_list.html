@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-bordered text-center">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Equipamento</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">IP</th>
+        <th scope="col">Cadastrado</th>
+        <th scope="col">Atualziado</th>
+        <th scope="col">Status</th>
+        <th scope="col">Ação</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for equipment in equipments %}
+    <tr>
+        <th scope="row">{{equipment.id}}</th>
+        <td>{{equipment.department}}</td>
+        <td>{{equipment.equipment}}</td>
+        <td>{{equipment.type}}</td>
+        <td>{{equipment.ip}}</td>
+        <td>{{equipment.register_in|date}}</td>
+        <td>{{equipment.updated_in|date}}</td>
+        {% if equipment.activated %}
+        <td>Ativo</td>
+        {% else %}
+        <td>Inativo</td>
+        {% endif %}
+        <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-success"><i class="fas fa-eye"></i></button>
+                <a href="{% url 'ip:equipments_edit' equipment.pk %}" type="button" class="btn btn-primary"><i
+                        class="fas fa-edit"></i></a>
+                <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </td>
+        {% empty %}
+        <td scope="row">Nenhuma informação encontrada!</td>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>
+{% endblock content %}
