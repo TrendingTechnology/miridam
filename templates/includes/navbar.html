@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top shadow-lg">
+    <div class="container">
+        <a class="navbar-brand btn btn-dark text-light" href="{% url 'ip:active_list' %}"><i
+                class="fas fa-network-wired"></i>Miridam</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown btn btn-light">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-wifi"></i>IP
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'ip:register' %}"><i class="fas fa-angle-right"></i>Adicionar</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'ip:active_list' %}"><i
+                                class="fas fa-angle-right"></i>Listar Ativos</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ip:disable_list' %}"><i
+                                class="fas fa-angle-right"></i>Listar Inativos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item btn btn-light">
+                    <a class="nav-link" href="#"><i class="fas fa-chalkboard-teacher"></i>Departamentos</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</nav>
