@@ -6,4 +6,4 @@ from ip.models import IP
 class IpForm(ModelForm):
     class Meta:
         model = IP
-        fields = ['ips_address', 'department', 'activated']
+        fields = ['ips_address', 'activated']
