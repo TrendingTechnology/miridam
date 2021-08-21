@@ -57,3 +57,9 @@ class IpDetailView(generic.DeleteView):
     model = IP
     template_name = 'detail.html'
     context_object_name = 'ip'
+
+
+class IpUpdateView(generic.UpdateView):
+    model = IP
+    template_name = 'update.html'
+    fields = '__all__'

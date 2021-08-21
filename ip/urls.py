@@ -8,4 +8,5 @@ urlpatterns = [
     path('detalhes/<int:pk>/', views.IpDetailView.as_view(), name='detail_ip'),
     path('cadastrar/', views.register_ipv4, name='register'),
     path('deletar/<int:pk>', views.IpDeleteView.as_view(), name='delete'),
+    path('editar/<int:pk>', views.IpUpdateView.as_view(), name='edit'),
 ]
