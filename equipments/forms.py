@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from ip.models import IP, ElectronicEquipment
+from equipments.models import IP, ElectronicEquipment
 
 
 class IpForm(ModelForm):

@@ -1,5 +1,5 @@
 from django.urls import path
-from ip import views
+from equipments import views
 
 app_name = 'ip'
 urlpatterns = [
