@@ -34,7 +34,8 @@
                 <a type="button" class="btn btn-success"><i class="fas fa-eye"></i></a>
                 <a href="{% url 'ip:equipments_edit' equipment.pk %}" type="button" class="btn btn-primary"><i
                         class="fas fa-edit"></i></a>
-                <a href="{% url 'ip:equipments_delete' equipment.pk %}" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                <a href="{% url 'ip:equipments_delete' equipment.pk %}" type="button" class="btn btn-danger"><i
+                        class="fas fa-trash-alt"></i></a>
             </div>
         </td>
         {% empty %}
