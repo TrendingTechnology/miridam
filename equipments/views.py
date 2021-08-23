@@ -30,7 +30,7 @@ def register_ip(request):
         if form.is_valid():
             ip = form.save(commit=False)
             ip.save()
-            return redirect('ip:list')
+            return redirect('ip:active_list')
     else:
         form = IpForm()
     return render(request, 'ip/register.html', {'form': form})
@@ -39,7 +39,7 @@ def register_ip(request):
 class IpDeleteView(generic.DeleteView):
     model = IP
     template_name = 'ip/delete.html'
-    success_url = reverse_lazy('equipments:list')
+    success_url = reverse_lazy('equipments:active_list')
 
 
 class IpDetailView(generic.DeleteView):

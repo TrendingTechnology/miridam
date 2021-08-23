@@ -8,7 +8,6 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">IP</th>
-        <th scope="col">Setor</th>
         <th scope="col">Cadastrado</th>
         <th scope="col">Atualizado</th>
         <th scope="col">Status</th>
@@ -18,7 +17,6 @@
     <tr>
         <th scope="row">{{ip.id}}</th>
         <td>{{ip.ips_address}}</td>
-        <td>{{ip.department}}</td>
         <td>{{ip.register_in|date}}</td>
         <td>{{ip.updated_in|date}}</td>
         {% if ip.activated %}
