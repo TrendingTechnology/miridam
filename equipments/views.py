@@ -71,3 +71,9 @@ class ElectronicEquipmentCreateView(generic.CreateView):
     form_class = ElectronicEquipmentForm
     template_name = 'equipment/equipments_edit.html'
     success_url = reverse_lazy('equipments:equipments')
+
+
+class ElectronicEquipmentDeleteView(generic.DeleteView):
+    model = ElectronicEquipment
+    template_name = 'equipment/equipment_delete.html'
+    success_url = reverse_lazy('equipments:equipments')
