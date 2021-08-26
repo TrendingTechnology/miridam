@@ -15,4 +15,5 @@ urlpatterns = [
     path('equipamentos/cadastrar/', views.ElectronicEquipmentCreateView.as_view(), name='equipments_create'),
     path('equipamentos/<int:pk>', views.ElectronicEquipmentEditView.as_view(), name='equipments_edit'),
     path('equipamentos/deletar/<int:pk>', views.ElectronicEquipmentDeleteView.as_view(), name='equipments_delete'),
+    path('equipamentos/detalhes/<int:pk>', views.ElectronicEquipmentDetailView.as_view(), name='equipments_detail'),
 ]
