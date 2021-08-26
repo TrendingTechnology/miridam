@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-<title>{{ip.department}}</title>
+<title>IP : {{equipments.ips_address}}</title>
 {% endblock title %}
 {% block content %}
 <table class="table table-bordered text-center">
@@ -15,11 +15,11 @@
     </thead>
     <tbody>
     <tr>
-        <th scope="row">{{ip.id}}</th>
-        <td>{{ip.ips_address}}</td>
-        <td>{{ip.register_in|date}}</td>
-        <td>{{ip.updated_in|date}}</td>
-        {% if ip.activated %}
+        <th scope="row">{{equipments.id}}</th>
+        <td>{{equipments.ips_address}}</td>
+        <td>{{equipments.register_in|date}}</td>
+        <td>{{equipments.updated_in|date}}</td>
+        {% if equipments.activated %}
         <td>Ativo</td>
         {% else %}
         <td>Inativo</td>
