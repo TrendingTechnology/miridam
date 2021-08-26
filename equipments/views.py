@@ -24,6 +24,12 @@ def disabled_IP_list(request):
     return render(request, template_name, context)
 
 
+class IpDetailView(generic.DeleteView):
+    model = IP
+    template_name = 'ip/detail.html'
+    context_object_name = 'equipments'
+
+
 def register_ip(request):
     if request.method == "POST":
         form = IpForm(request.POST)
@@ -40,12 +46,6 @@ class IpDeleteView(generic.DeleteView):
     model = IP
     template_name = 'ip/delete.html'
     success_url = reverse_lazy('equipments:active_list')
-
-
-class IpDetailView(generic.DeleteView):
-    model = IP
-    template_name = 'ip/detail.html'
-    context_object_name = 'equipments'
 
 
 class IpUpdateView(generic.UpdateView):
@@ -77,3 +77,9 @@ class ElectronicEquipmentDeleteView(generic.DeleteView):
     model = ElectronicEquipment
     template_name = 'equipment/equipment_delete.html'
     success_url = reverse_lazy('equipments:equipments')
+
+
+class ElectronicEquipmentDetailView(generic.DetailView):
+    model = ElectronicEquipment
+    context_object_name = 'equipments'
+    template_name = 'equipment/equipments_detail.html'
