@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>{{equipments.equipment}}</title>
+{% endblock title %}
+{% block content %}
+<table class="table table-bordered text-center">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">IP</th>
+        <th scope="col">Equipamento</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Cadastrado</th>
+        <th scope="col">Atualizado</th>
+        <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">{{equipments.id}}</th>
+        <td>{{equipments.department}}</td>
+        <td>{{equipments.ip}}</td>
+        <td>{{equipments.equipment}}</td>
+        <td>{{equipments.type}}</td>
+        <td>{{equipments.register_in|date}}</td>
+        <td>{{equipments.updated_in|date}}</td>
+        {% if equipments.activated %}
+        <td>Ativo</td>
+        {% else %}
+        <td>Inativo</td>
+        {% endif %}
+    </tr>
+    </tbody>
+</table>
+<a href="{% url 'ip:active_list' %}" class="btn btn-outline-primary">Voltar</a>
+{% endblock content %}
