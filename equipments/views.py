@@ -9,7 +9,7 @@ from django.views import generic
 
 class IpListView(generic.ListView):
     model = IP
-    template_name = 'ip/list_ip.html'
+    template_name = 'ip/list_ips.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -18,8 +18,15 @@ class IpListView(generic.ListView):
 
 
 def disabled_IP_list(request):
-    template_name = 'ip/list_ip.html'
+    template_name = 'ip/list_ips.html'
     list_all_ip = IP.objects.filter(activated=False)
+    context = {'list_all_ip': list_all_ip}
+    return render(request, template_name, context)
+
+
+def list_all_ip(request):
+    template_name = 'ip/list_ips.html'
+    list_all_ip = IP.objects.all()
     context = {'list_all_ip': list_all_ip}
     return render(request, template_name, context)
 
