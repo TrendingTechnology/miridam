@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
     <div class="container">
         <a class="navbar-brand btn btn-dark text-light" href="{% url 'ip:active_list' %}"><i
                 class="fas fa-network-wired"></i>Miridam</a>
@@ -8,31 +8,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown btn btn-light">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                <li class="nav-item dropdown btn btn-dark">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownIP" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-wifi"></i>IP
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownIP">
                         <li><a class="dropdown-item" href="{% url 'ip:register' %}"><i class="fas fa-angle-right"></i>Adicionar</a>
                         </li>
+                        <li><a class="dropdown-item" href="{% url 'ip:list_all' %}"><i
+                                class="fas fa-angle-right"></i>Listar Todos</a></li>
                         <li><a class="dropdown-item" href="{% url 'ip:active_list' %}"><i
                                 class="fas fa-angle-right"></i>Listar Ativos</a></li>
                         <li><a class="dropdown-item" href="{% url 'ip:disable_list' %}"><i
                                 class="fas fa-angle-right"></i>Listar Inativos</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown btn btn-light">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-wifi"></i>Equipamentos
+                <li class="nav-item dropdown btn btn-dark">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-print"></i>Equipamentos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'ip:equipments_create'%}"><i
                                 class="fas fa-angle-right"></i>Adicionar</a>
                         </li>
                         <li><a class="dropdown-item" href="{% url 'ip:equipments' %}"><i
-                                class="fas fa-angle-right"></i>Listar Ativos</a></li>
+                                class="fas fa-angle-right"></i>Listar Todos</a></li>
                     </ul>
                 </li>
             </ul>
