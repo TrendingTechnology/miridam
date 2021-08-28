@@ -5,6 +5,9 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">IP</th>
+        <th scope="col">Cadastrado</th>
+        <th scope="col">Atualizado</th>
+        <th scope="col">Status</th>
         <th scope="col">Ação</th>
     </tr>
     </thead>
@@ -13,6 +16,13 @@
     <tr>
         <th scope="row">{{ip.id}}</th>
         <td>{{ip.ips_address}}</td>
+        <td>{{ip.register_in|date}}</td>
+        <td>{{ip.updated_in|date}}</td>
+        {% if ip.activated %}
+        <td>Ativo</td>
+        {% else %}
+        <td>Inativo</td>
+        {% endif%}
         <td>
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="{{ ip.get_absolute_url }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
