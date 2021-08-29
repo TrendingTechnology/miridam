@@ -1,7 +1,16 @@
 from django.db import models
 
 
-class Department(models.Model):
+class Base(models.Model):
+    register_in = models.DateTimeField(auto_now_add=True)
+    updated_in = models.DateTimeField(auto_now=True)
+    activated = models.BooleanField(default=True, verbose_name='Ativo')
+
+    class Meta:
+        abstract = True
+
+
+class Department(Base):
     department = models.CharField(max_length=80, verbose_name='Departamento')
 
     def __str__(self):
