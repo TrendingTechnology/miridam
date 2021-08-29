@@ -9,6 +9,7 @@ EQUIPMENT_TYPE_CHOICES = (
     ('SOM', 'SOM'),
     ('ROTEADOR', 'ROTEADOR'),
     ('CÀMERA', 'CÂMERA'),
+    ('IMPRESSORA', 'IMPRESSORA'),
     ('OUTROS', 'OUTROS'),
 )
 
@@ -16,7 +17,7 @@ EQUIPMENT_TYPE_CHOICES = (
 class Base(models.Model):
     register_in = models.DateTimeField(auto_now_add=True)
     updated_in = models.DateTimeField(auto_now=True)
-    activated = models.BooleanField(default=True, verbose_name='IP ativado?')
+    activated = models.BooleanField(default=True, verbose_name='Ativo')
 
     class Meta:
         abstract = True
@@ -42,7 +43,7 @@ class ElectronicEquipment(Base):
     department = models.ForeignKey(Department, on_delete=models.CASCADE, max_length=80,
                                    verbose_name='Departamento')
     equipment = models.CharField(max_length=80, verbose_name='Identificação')
-    type = models.CharField(max_length=8, choices=EQUIPMENT_TYPE_CHOICES, verbose_name='Tipo')
+    type = models.CharField(max_length=10, choices=EQUIPMENT_TYPE_CHOICES, verbose_name='Tipo')
     ip = models.OneToOneField(IP, on_delete=models.CASCADE, verbose_name='IP')
 
     def __str__(self):
