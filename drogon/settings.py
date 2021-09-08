@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'equipments.apps.EquipmentsConfig',
     'department.apps.DepartmentConfig',
+    'dashboard.apps.DashboardConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
+<table class="table table-bordered text-center">
+    <thead>
+        <tr class="bg-dark">
+            <th scope="col">Departamento</th>
+            <th scope="col">Supervisor</th>
+            <th scope="col">Ativos</th>
+            <th scope="col">Inativos</th>
+            <th scope="col">Atualizado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{department.equipment}}</th>
+            <th scope="row">{{equipments}}</th>
+            <th scope="row">{{equipment.ip}}</th>
+            <th scope="row">{{equipment.type}}</th>
+            <th scope="row">{{equipment.activated}}</th>
+        </tr>
+    </tbody>
+</table>
 {% endblock content %}

@@ -12,6 +12,7 @@ class Base(models.Model):
 
 class Department(Base):
     department = models.CharField(max_length=80, verbose_name='Departamento')
+    supervisor = models.CharField(max_length=100, verbose_name='Surpervisor')
 
     def __str__(self):
         return self.department
