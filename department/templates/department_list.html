@@ -5,19 +5,25 @@
         <tr class="bg-dark">
             <th scope="col">Departamento</th>
             <th scope="col">Supervisor</th>
-            <th scope="col">Ativos</th>
-            <th scope="col">Inativos</th>
+            <th scope="col">Criado</th>
             <th scope="col">Atualizado</th>
+            <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
+        {% for department in departments %}
         <tr>
-            <th scope="row">{{department.equipment}}</th>
-            <th scope="row">{{equipments}}</th>
-            <th scope="row">{{equipment.ip}}</th>
-            <th scope="row">{{equipment.type}}</th>
-            <th scope="row">{{equipment.activated}}</th>
+            <th scope="row">{{department.department}}</th>
+            <th scope="row">{{department.supervisor}}</th>
+            <th scope="row">{{department.register_in|date}}</th>
+            <th scope="row">{{department.updated_in|date}}</th>
+            {% if department.activated %}
+            <th scope="row">Ativo</th>
+            {% else %}
+            <th scope="row">Inativo</th>
+            {% endif %}
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 {% endblock content %}
