@@ -1,68 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="row">
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <strong>Olá, Wesley Matheus!</strong> O sistema recebeu novas atualizações, veja as atualizações:
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="col card text-white bg-info m-1">
         <div class="card-header">Equipamentos</div>
         <div class="card-body">
-            <h5 class="card-title">Primary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="display-1">{{count_equipments}}</h5>
+            <p class="text-end"><i class="fas fa-3x fa-sitemap text-white"></i></p>
         </div>
     </div>
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <div class="card-header">IP'S</div>
+    <div class="col card text-dark bg-white m-1">
+        <div class="card-header">IP's</div>
         <div class="card-body">
-            <h5 class="card-title">Secondary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="display-1">{{count_ip}}</h5>
+            <p class="text-end"><i class="fas fa-3x fa-wifi text-success"></i></p>
         </div>
     </div>
-    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
+    <div class="col card text-white bg-success m-1">
+        <div class="card-header">Departamentos</div>
         <div class="card-body">
-            <h5 class="card-title">Success card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-        </div>
-    </div>
-    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-            <h5 class="card-title">Danger card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-        </div>
-    </div>
-    <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-            <h5 class="card-title">Warning card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-        </div>
-    </div>
-    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-            <h5 class="card-title">Info card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-        </div>
-    </div>
-    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-        </div>
-    </div>
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-            <h5 class="card-title">Dark card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="display-1">{{count_departments}}</h5>
+            <p class="text-end"><i class="fas fa-3x fa-building text-dark"></i></p>
         </div>
     </div>
 </section>
