@@ -1,4 +1,4 @@
-# [Drogon] - Projeto de controle de equipamentos
+  # [Miridam] - Projeto de controle de equipamentos
 ## para que serve esse projeto?
 
 Esse projeto surgiu como minha proposta de melhoria para controle de equipamentos na empresa onde trabalho. Usamos bastante excel(nada contra quem usa excel para controle de alguma coisa), mas preciso de um sistema mais especifico onde eu possa cadastrar departamentos, equipamentos, IP's etc... 
