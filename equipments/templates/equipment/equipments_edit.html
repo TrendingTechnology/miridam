@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %}
 {% block title %}
 <title>Adicionar ou Editar equipamentos</title>
 {% endblock title %}
 {% block content %}
-<form method="post">
+<form method="post" class="uniForm">
     {% csrf_token %}
-     {{ form.as_p }}
+    {% bootstrap_form form %}
     <button type="submit" class="btn btn-outline-primary">Confirmar</button>
     <a href="{% url 'ip:equipments'%}" class="btn btn-outline-danger">Cancelar</a>
 </form>

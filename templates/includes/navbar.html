@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,12 +6,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown btn btn-dark">
-                    <a class="navbar-brand btn btn-dark  text-white" href="{% url 'dashboard:dashboard' %}"><i
+                <li class="nav-item dropdown btn btn-light">
+                    <a class="navbar-brand" href="{% url 'dashboard:dashboard' %}"><i
                             class="fas fa-hands-helping"></i>Dashboard</a>
                 </li>
-                <li class="nav-item dropdown btn btn-dark">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownIP" role="button"
+                <li class="nav-item dropdown btn btn-light">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownIP" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-wifi"></i>IP
                     </a>
@@ -27,8 +27,8 @@
                                 class="fas fa-angle-right"></i>Listar Inativos</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown btn btn-dark">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownEquipment" role="button"
+                <li class="nav-item dropdown btn btn-light">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEquipment" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-print"></i>Equipamentos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownEquipment">
@@ -39,8 +39,8 @@
                                 class="fas fa-angle-right"></i>Listar Todos</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown btn btn-dark">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownDepartment" role="button"
+                <li class="nav-item dropdown btn btn-light">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDepartment" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-laptop-house"></i>Departamentos
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownDepartment">
@@ -50,6 +50,10 @@
                         <li><a class="dropdown-item" href="{% url 'departments:department_list'%}"><i
                                 class="fas fa-angle-right"></i>Listar Todos</a></li>
                     </ul>
+                </li>
+                <li class="nav-item dropdown btn btn-danger">
+                    <a class="navbar-brand" href="#">
+                        <i class="fas fa-file-pdf"></i>Gerar Relatório</a>
                 </li>
             </ul>
         </div>
