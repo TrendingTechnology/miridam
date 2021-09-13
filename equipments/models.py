@@ -44,7 +44,7 @@ class ElectronicEquipment(Base):
                                    verbose_name='Departamento')
     equipment = models.CharField(max_length=80, verbose_name='Identificação')
     type = models.CharField(max_length=10, choices=EQUIPMENT_TYPE_CHOICES, verbose_name='Tipo')
-    ip = models.OneToOneField(IP, on_delete=models.CASCADE, verbose_name='IP')
+    ip = models.OneToOneField(IP, blank=True, null=True, on_delete=models.CASCADE, verbose_name='IP')
 
     def __str__(self):
         return self.equipment
