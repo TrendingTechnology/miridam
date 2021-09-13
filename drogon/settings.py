@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'equipments.apps.EquipmentsConfig',
     'department.apps.DepartmentConfig',
     'dashboard.apps.DashboardConfig',
+    'reports.apps.ReportsConfig',
     # ...
     "bootstrap5",
     # ...

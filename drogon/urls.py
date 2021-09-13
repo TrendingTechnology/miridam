@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('equipamentos/', include('equipments.urls', namespace='equipments')),
     path('departamentos/', include('department.urls', namespace='departments')),
+    path('relatorios/', include('reports.urls', namespace='reports')),
     path('', include('dashboard.urls', namespace='dashboard')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
