@@ -17,7 +17,11 @@
     <tr>
         <th scope="row">{{equipments.id}}</th>
         <td>{{equipments.department}}</td>
-        <td>{{equipments.ip}}</td>
+        {% if equipment.ip %}
+        <td>{{equipment.ip}}</td>
+        {% else %}
+        <td>Não Possui</td>
+        {% endif %}
         <td>{{equipments.equipment}}</td>
         <td>{{equipments.type}}</td>
         <td>{{equipments.register_in|date}}</td>
@@ -30,5 +34,12 @@
     </tr>
     </tbody>
 </table>
+<div class="card mb-2">
+    <div class="p-2">
+        <h3>Observações:</h3>
+        <p class="about">{{equipments.warning}}</p>
+    </div>
+</div>
+<a href="{% url 'ip:equipments_edit' equipments.pk %}" type="button" class="btn btn-outline-warning">Editar</a>
 <a href="{% url 'ip:active_list' %}" class="btn btn-outline-primary">Voltar</a>
 {% endblock content %}
