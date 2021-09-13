@@ -17,6 +17,10 @@ class Department(Base):
     def __str__(self):
         return self.department
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('departments:department_list')
+
     class Meta:
         verbose_name = 'Departamento'
         verbose_name_plural = 'Departamentos'
