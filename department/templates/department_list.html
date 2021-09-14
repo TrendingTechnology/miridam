@@ -2,7 +2,8 @@
 {% block content %}
 <table class="table table-bordered text-center">
     <div class="btn-group mb-2" role="group">
-        <a href="{% url 'departments:department_create' %}" type="button" class="btn btn-primary"><i class="fas fa-plus"></i>Adicionar</a>
+        <a href="{% url 'departments:department_create' %}" type="button" class="btn btn-primary"><i
+                class="fas fa-plus"></i>Adicionar</a>
     </div>
     <thead>
     <tr>
@@ -32,7 +33,7 @@
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="#" type="button" class="btn btn-success"><i
                         class="fas fa-eye"></i></a>
-                <a href="#" type="button" class="btn btn-primary"><i
+                <a href="{% url 'departments:department_edit' department.pk %}" type="button" class="btn btn-primary"><i
                         class="fas fa-edit"></i></a>
                 <a href="#" type="button" class="btn btn-danger"><i
                         class="fas fa-trash-alt"></i></a>
