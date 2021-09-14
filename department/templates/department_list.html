@@ -6,43 +6,41 @@
                 class="fas fa-plus"></i>Adicionar</a>
     </div>
     <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Departamento</th>
-        <th scope="col">Supervisor</th>
-        <th scope="col">Criado</th>
-        <th scope="col">Atualizado</th>
-        <th scope="col">Status</th>
-        <th scope="col">Ação</th>
-    </tr>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Departamento</th>
+            <th scope="col">Supervisor</th>
+            <th scope="col">Criado</th>
+            <th scope="col">Atualizado</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ação</th>
+        </tr>
     </thead>
     <tbody>
-    {% for department in departments %}
-    <tr>
-        <th scope="row">{{department.id}}</th>
-        <td>{{department.department}}</td>
-        <td>{{department.supervisor}}</td>
-        <td>{{department.register_in|date}}</td>
-        <td>{{department.updated_in|date}}</td>
-        {% if department.activated %}
-        <td scope="row">Ativo</td>
-        {% else %}
-        <td scope="row">Inativo</td>
-        {% endif %}
-        <td>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-success"><i
-                        class="fas fa-eye"></i></a>
-                <a href="{% url 'departments:department_edit' department.pk %}" type="button" class="btn btn-primary"><i
-                        class="fas fa-edit"></i></a>
-                <a href="#" type="button" class="btn btn-danger"><i
-                        class="fas fa-trash-alt"></i></a>
-            </div>
-        </td>
-    </tr>
-    {% endfor %}
+        {% for department in departments %}
+        <tr>
+            <th scope="row">{{department.id}}</th>
+            <td>{{department.department}}</td>
+            <td>{{department.supervisor}}</td>
+            <td>{{department.register_in|date}}</td>
+            <td>{{department.updated_in|date}}</td>
+            {% if department.activated %}
+            <td scope="row">Ativo</td>
+            {% else %}
+            <td scope="row">Inativo</td>
+            {% endif %}
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="{% url 'departments:department_detail' department.pk %}" type="button"
+                        class="btn btn-success"><i class="fas fa-eye"></i></a>
+                    <a href="{% url 'departments:department_edit' department.pk %}" type="button"
+                        class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'departments:department_delete' department.pk %}" type="button"
+                        class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
     </tbody>
 </table>
 {% endblock content %}
-
-
