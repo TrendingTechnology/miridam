@@ -11,8 +11,18 @@ class DepartmentListView(generic.ListView):
 
 class DepartmentCreateView(generic.CreateView):
     model = Department
-    template_name = 'department_create.html'
+    template_name = 'department_create_update.html'
     fields = '__all__'
+
+
+class DepartmentEditView(generic.UpdateView):
+    model = Department
+    template_name = 'department_create_update.html'
+    fields = '__all__'
+
+
+class DepartmentDeleteView(generic.DeleteView):
+    pass
 
 
 class DepartmentDeleteView(generic.DeleteView):
