@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-bordered text-center">
+    <thead>
+    <tr>
+        <th scope="col">Departamento</th>
+        <th scope="col">Supervisor</th>
+        <th scope="col">Criado</th>
+        <th scope="col">Atualizado</th>
+        <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">{{department.department}}</th>
+        <td>{{department.supervisor}}</td>
+        <td>{{ department.register_in|date}}</td>
+        <td>{{department.updated_in|date}}</td>
+        {%if department.activated %}
+        <td>Ativo</td>
+        {% else %}
+        <td>Inativo</td>
+        {% endif %}
+    </tr>
+    </tbody>
+</table>
+<a href="{% url 'departments:department_edit' department.pk %}" type="button" class="btn btn-outline-warning">Editar</a>
+<a href="{% url 'departments:department_list' %}" class="btn btn-outline-primary">Voltar</a>
+{% endblock content %}
